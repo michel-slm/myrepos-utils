@@ -23,9 +23,11 @@ def cli():
     pass
 
 
-@cli.command(help="cd to a directory tracked by myrepos")
-@click.argument("paths", nargs=-1)
-def cd(paths: list[str]):
+@cli.command(help="find repo directories tracked by myrepos")
+@click.argument("query", nargs=-1)
+def find(query: list[str]):
     import os
 
-    os.chdir(utils.find_dir(paths))
+    matches = utils.find_repo(query)
+    for repo in matches:
+        click.echo(repo)
