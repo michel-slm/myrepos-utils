@@ -1,0 +1,5 @@
+black
+build
+pip-tools
+pytest
+pytest-cov
