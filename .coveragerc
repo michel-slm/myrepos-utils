@@ -1,0 +1,5 @@
+[run]
+omit =
+  myrepos_utils/__*__.py
+  myrepos_utils/cli.py
+  myrepos_utils/tests/*.py
