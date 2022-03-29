@@ -20,7 +20,7 @@ CONFIG.read(os.path.expanduser("~/.mrconfig"))
 
 
 def get_repos(config: configparser.ConfigParser = CONFIG) -> list[str]:
-    return list(config.keys())
+    return list(config.sections())
 
 
 def find_repo(
@@ -31,3 +31,12 @@ def find_repo(
     repos = get_repos(config)
     r = f".*{'.*'.join(query)}.*"
     return [os.path.expanduser(f"~/{repo}") for repo in repos if re.match(r, repo)]
+
+def sort(config: configparser.ConfigParser = CONFIG) -> configparser.ConfigParser:
+    sorted_config = configparser.ConfigParser()
+    for sec in sorted(config.sections()):
+        sorted_config.add_section(sec)
+        for k, v in config[sec].items():
+            sorted_config[sec][k] = v
+    return sorted_config
+

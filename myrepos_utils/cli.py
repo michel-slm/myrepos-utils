@@ -14,6 +14,7 @@
 
 import click
 import json
+import os
 import sys
 from . import utils
 
@@ -26,8 +27,13 @@ def cli():
 @cli.command(help="find repo directories tracked by myrepos")
 @click.argument("query", nargs=-1)
 def find(query: list[str]):
-    import os
-
     matches = utils.find_repo(query)
     for repo in matches:
         click.echo(repo)
+
+@cli.command(help="sort ~/.mrconfig")
+def sort():
+    sorted_config = utils.sort()
+    with open(os.path.expanduser("~/.mrconfig"), "w") as f:
+        sorted_config.write(f)
+
