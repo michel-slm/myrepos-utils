@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# (c) Michel Alexandre Salim
+# (c) Michel Lind
 #
-# Fedora-License-Identifier: GPLv2+
-# SPDX-2.0-License-Identifier: GPL-2.0+
 # SPDX-3.0-License-Identifier: GPL-2.0-or-later
 #
 # This program is free software.
