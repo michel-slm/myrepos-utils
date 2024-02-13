@@ -10,4 +10,4 @@
 # For more information on free software, see
 # <https://www.gnu.org/philosophy/free-sw.en.html>.
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
