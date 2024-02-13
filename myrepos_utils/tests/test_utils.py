@@ -48,9 +48,10 @@ def test_find_repo():
     mock_config.sections.assert_called_once()
     assert result == [os.path.expanduser("~/src/gitlab/owner2/projB")]
 
+
 def test_sort():
     mock_config = get_mock_config()
     result = utils.sort(mock_config)
-    assert len(result) == len(REPOS) + 1 # DEFAULT
+    assert len(result) == len(REPOS) + 1  # DEFAULT
     assert set(result.sections()) == set(REPOS.keys())
     assert result.sections() == sorted(result.sections())
